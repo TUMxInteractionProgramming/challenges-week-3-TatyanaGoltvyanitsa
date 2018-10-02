@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>chatter|app</title>
@@ -15,36 +15,55 @@
 <body>
 <!-- #4 #one #page -->
 <div id="channels">
-    <h1>
-        <!-- #3 #channels #moocus the talkative duck-->
-        <img src="http://ip.lfe.mw.tum.de/sections/moocus.png" alt="Moocus, the chatty duck!" style="height: 56px;">
-        chatter|app
-    </h1>
+        <h1>
+            <!-- #3 #channels #moocus the talkative duck-->
+            <img src="http://ip.lfe.mw.tum.de/sections/moocus.png" alt="Moocus, the chatty duck!" style="height: 56px;">
+            chatter|app
+        </h1>
 
     <!-- #3 #channels #list is much better, than headlines or paragraphs... -->
     <ul>
-        <li>#Yummy
+        <li>
+            #Yummy
             <!-- #3 #channels #favorite this is not starred -->
-            <img src="http://ip.lfe.mw.tum.de/sections/star-o.png" alt="not starred">
+            <span class="channel-meta">
+                <img src="http://ip.lfe.mw.tum.de/sections/star-o.png" alt="not starred" />
+                <img src="https://ip.lfe.mw.tum.de/sections/chevron-right.png" alt="chevron right icon" />
+            </span>
         </li>
 
         <!-- #4 #channel is #highlighted -->
         <li class="selected">
             #SevenContinents
             <!-- #3 #channels #favorite this is starred -->
-            <img src="http://ip.lfe.mw.tum.de/sections/star.png" alt="starred">
+            <span class="channel-meta">
+                <img src="http://ip.lfe.mw.tum.de/sections/star.png" alt="starred" />
+                <img src="https://ip.lfe.mw.tum.de/sections/chevron-right.png" alt="chevron right icon" />
+            </span>
         </li>
-        <li>#KillerApp
+        <li>
+            #KillerApp
             <!-- #3 #channels #favorite this is not starred -->
-            <img src="http://ip.lfe.mw.tum.de/sections/star-o.png" alt="not starred">
+            <span class="channel-meta">
+                <img src="http://ip.lfe.mw.tum.de/sections/star-o.png" alt="not starred">
+                <img src="https://ip.lfe.mw.tum.de/sections/chevron-right.png" alt="chevron right icon" />
+            </span>
         </li>
-        <li>#FirstPersonOnMars
+        <li>
+            #FirstPersonOnMars
             <!-- #3 #channels #favorite this is starred -->
-            <img src="http://ip.lfe.mw.tum.de/sections/star.png" alt="starred">
+            <span class="channel-meta">
+                <img src="http://ip.lfe.mw.tum.de/sections/star.png" alt="starred">
+                <img src="https://ip.lfe.mw.tum.de/sections/chevron-right.png" alt="chevron right icon" />
+            </span>
         </li>
-        <li>#Octoberfest
+        <li>
+            #Octoberfest
             <!-- #3 #channels #favorite this is not starred -->
-            <img src="http://ip.lfe.mw.tum.de/sections/star-o.png" alt="not starred">
+            <span class="channel-meta">
+                <img src="http://ip.lfe.mw.tum.de/sections/star-o.png" alt="not starred">
+                <img src="https://ip.lfe.mw.tum.de/sections/chevron-right.png" alt="chevron right icon" />
+                </span>
         </li>
     </ul>
 
@@ -74,14 +93,18 @@
 <div id="chat">
     <h1>
         #SevenContinents
-        <small>by
+        <small>
+            by
             <strong>cheeses.yard.applies</strong>
         </small>
+        <!-- Added star icon -->
+        <img src="http://ip.lfe.mw.tum.de/sections/star.png" alt="star icon"/>
     </h1>
 
     <!-- #3 #chat #container -->
     <!-- #4 assign a #class to all your #messages to address them with css -->
     <!-- #4 apply a class "own" to your #messages to align them separately with #margins -->
+    <div id="message-container">
     <div class="message own">
         <h3>
             <!-- #3 #chat #location points to w3w in a new tab -->
@@ -168,7 +191,19 @@
         </h3>
         <p>北京</p>
         <button>+5 min.</button>
+</div>
+        </div>
+
+    <div id="chat-bar">
+        <button id="emojis-button">
+            <img src="http://ip.lfe.mw.tum.de/sections/smile-o.png" alt="smiley face icon">
+        </button>
+        <div id="emojis">
+            &#x1F601; &#x1F602; &#x1F603;
+            &#x1F604; &#x1F605;
+        </div>
     </div>
+
 </div>
 
 </body>

@@ -1,9 +1,6 @@
 /* #4 #sweat #external css file */
-
 /* GLOBAL */
-
 /* #4 #global styles*/
-
 * {
     /* #4 use #roboto #font */
     font-family: 'Roboto', 'Arial', sans-serif;
@@ -22,27 +19,63 @@ button, strong {
     text-transform: uppercase;
 }
 
+/****************************************/
+/*** Splitting Channels and Chat Area ***/
+/****************************************/
 
+#channels {
+    position: absolute;
+    left: 0px;
+    width: 40%;
+    height: 100%;
+}
 
-/* APP BAR */
+#chat {
+    position: absolute;
+    right: 0px;
+    width: 60%;
+    height: 100%;
+}
+/*****************************************************************/
+/*** App bars restyled according to Material Design Guidelines ***/
+/*****************************************************************/
 
-/* #4 #sweat address both #app-bar s */
 h1 {
+    /* General Styles for App Bars */
     background-color: #3F51B5;
     color: white;
+    padding: 16px;
+    font-size: 20px;
+    font-weight: 500;
 }
 
-
-/* CHANNELS LIST */
-
-/* #4 #sweat #channels */
-ul {
-    /* #3 #channels #list modifies h2 to ul */
-    background-color: white;
-    /* #3 #channels #bullets removed */
-    list-style-type: none;
+#channels h1 img {
+    /* Repositioning Moocus icon */
+    position: absolute;
+    left: 16px;
+    top: 0px;
 }
 
+#channels h1 {
+    /* Adjusting Channels bar title padding due to repositioning of Moocus icon */
+    padding-left: 72px;
+}
+
+#chat h1 img {
+    /* Repositioning Chat Bar Star icon */
+    position: absolute;
+    vertical-align: bottom;
+    right: 16px;
+}
+
+li {
+    /* Adjusting font-weight of channels list text */
+    font-weight: 500;
+}
+
+/****************************/
+/*** Channel list styling ***/
+/****************************/
 li {
     /* #4 #channel #tile geometry */
     box-sizing: border-box;
@@ -64,27 +97,29 @@ li img {
     vertical-align: middle;
 }
 
-/* TAB BAR */
-
-/* #4 #sweat #tab-bar */
-#tab-bar {
-    /* #3 #tab-bar #container should be white */
+ul {
+    /* #3 #channels #list modifies h2 to ul */
     background-color: white;
-    /* #3 #tab-bar #container has all buttons centered */
-    text-align: center;
+    /* #3 #channels #bullets removed */
+    list-style-type: none;
+    /* Allows channel list to scroll when populated */
+    position: absolute;
+    top: 56px;
+    bottom: 56px;
+    overflow: auto;
+    width: 100%;
 }
 
-/* #4 add styles to #tab-bar #buttons */
-#tab-bar button {
-    background-color: white;
-    border: none;
-    font-size: 13px;
-
-    /* #4 #tab-bar buttons have a width of #one-third of the available space */
-    width: 33%;
-    height: 72px;
-    padding: 16px;
+.channel-meta {
+    /* Channel list icons positioned to the right and centered vertically */
+    position: absolute;
+    right: 16px;
+    vertical-align: bottom; /* Isn't working like it did for the chat bar star icon */
 }
+
+/**********************************/
+/*** Tab- and chat- bar styling ***/
+/**********************************/
 
 /* #4 #tab-bar buttons do have a #line-break and images are centered due to the left&right auto margin */
 #tab-bar button img {
@@ -98,20 +133,64 @@ li img {
     border-bottom: 4px solid #3F51B5;
 }
 
+#tab-bar, #chat-bar {
+    /* #3 #tab-bar #container should be white */
+    background-color: white;
+    /* #3 #tab-bar #container has all buttons centered */
+    text-align: center;
+    /* Aligning tab bar to bottom of page */
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+}
 
-/* MESSAGES */
+#tab-bar button, #chat-bar button {
+    background-color: white;
+    border: none;
+    font-size: 13px;
+    /* #4 #tab-bar buttons have a width of #one-third of the available space */
+    width: 33%;
+    height: 72px;
+    padding: 16px;
+    /* Stretches each button to equal width across tab bar */
+    flex-grow: 1;
+}
+
+#chat-bar button {
+    padding-left: 8px;
+    text-align: left;
+}
+
+#emojis {
+    background-color: white;
+    border: 1px solid black;
+    height: 284px;
+    width: 284px;
+    font-size: 28px;
+    text-align: left;
+    padding: 16px;
+    /* allows for scrolling within element when too many emojis */
+    overflow: auto;
+    /* positioning the element */
+    position: absolute;
+    left: 16px;
+    bottom: 58px;
+}
+
+/****************************/
+/*** Chat message styling ***/
+/****************************/
+
 /* #4 select #specific #messages by class and re-assign element styles according to their #hierarchy in a nested way */
 .message {
     /* #3 #chat #width*/
     width: 80%;
-
     /* #4 align all #messages using #margins */
     margin-left: 2.5%;
-
     /* #4 #message distance to next message container*/
     margin-bottom: 8px;
 }
-
 
 .message h3 {
     font-size: medium;
@@ -143,3 +222,40 @@ li img {
     margin-left: 17.5%;
 }
 
+.message {
+    /* Give .message div an explicit style so buttons can use as reference */
+    position: relative;
+}
+
+.message button {
+    /* absolute position based on containing div with 8px margins on right and bottom */
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+}
+
+.message a, .message em {
+    /* Assigning fixed-width to username and time remaining meta-data */
+    width: 33%;
+}
+
+.message em {
+    /* Aligning time remaining text to the right */
+    text-align: right;
+}
+
+h3 {
+    /* Displaying chat message metadata evenly across message space */
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+#message-container {
+    /* Styled to allow for scrolling when too many messages for screen size */
+    position: absolute;
+    width: 100%;
+    top: 56px;
+    bottom: 56px;
+    overflow: auto;
+}
