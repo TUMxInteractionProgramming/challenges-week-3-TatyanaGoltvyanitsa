@@ -259,3 +259,14 @@ h3 {
     bottom: 56px;
     overflow: auto;
 }
+
+/* Chat app bar styling to ensure link fits in with scheme */
+#chat small strong a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Initially hides emojis menu */
+#emojis {
+    display: none;
+}
